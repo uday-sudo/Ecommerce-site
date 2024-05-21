@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 {% load widget_tweaks %}
 <html lang="en" dir="ltr">
@@ -140,7 +141,8 @@ a.socialIcon:hover,
     transition: all 0.8s
 }
     </style>
-  </head>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
   <body>
     {% include "ecom/navbar.html" %}
     <div class="container">

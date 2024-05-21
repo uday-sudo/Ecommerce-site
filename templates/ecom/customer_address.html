@@ -88,6 +88,8 @@ select{
 	color:red;
 }
 </style>
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
 {%if product_in_cart%}
 <form method="post">
   {% csrf_token %}
