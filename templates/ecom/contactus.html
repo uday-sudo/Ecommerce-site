@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
-<body style="background-color: #B3E5FC;">
+<body style="background-color: #fefefe;">
 
   {%if request.user.is_authenticated%}
     {% include "ecom/customer_navbar.html" %}
@@ -20,7 +20,7 @@
   {%endif%}
 
   <center>
-    <h3 class='alert alert-success'>Send Us Your Valuable Feedback !</h3>
+    <h3 class='alert alert-success'>Feedback Form !</h3>
 
     <form method="POST">
       <!-- Very Important csrf Token -->

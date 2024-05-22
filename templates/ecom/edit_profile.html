@@ -1,5 +1,5 @@
-{% load static %}
 {% extends 'ecom/customer_base.html' %}
+{% load static %}
 {% load widget_tweaks %}
 {% block content %}
 
@@ -15,20 +15,22 @@
     .note {
       text-align: center;
       height: 80px;
-      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      background: -webkit-linear-gradient(left, #70ddd3, #3c5cb2);
       color: #fff;
       font-weight: bold;
       line-height: 80px;
+      border-radius: 25px 25px 0px 0px;
     }
 
     .form-content {
       padding: 5%;
       border: 1px solid #ced4da;
       margin-bottom: 2%;
+      border-radius: 0px 0px 25px 25px;
     }
 
     .form-control {
-      border-radius: 1.5rem;
+      border-radius: 20px;
     }
 
     .btnSubmit {
@@ -37,12 +39,20 @@
       padding: 1%;
       width: 20%;
       cursor: pointer;
-      background: #0062cc;
+      background:-webkit-linear-gradient(left, #70ddd3, #3c5cb2);
       color: #fff;
+    }
+
+    .btnSubmit:hover {
+      background:-webkit-linear-gradient(left, #4c958e, #25386f);
     }
 
     .menu{
       top: 50px;
+    }
+
+    .cart-button {
+      visibility: hidden;
     }
   </style>
 
@@ -50,7 +60,7 @@
 <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <br><br><br><br><br><br>
-<!------ update page for doctor by admin  ---------->
+<!------ update page for admin  ---------->
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="container register-form">

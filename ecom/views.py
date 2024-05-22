@@ -17,7 +17,10 @@ def home_view(request):
         product_count_in_cart=0
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
-    return render(request,'ecom/index.html',{'products':products,'product_count_in_cart':product_count_in_cart})
+    customer=models.Customer.objects.get(user_id=request.user.id)
+    user=models.User.objects.get(id=customer.user_id)
+    userForm=forms.CustomerUserForm(instance=user)
+    return render(request,'ecom/index.html',{'products':products,'product_count_in_cart':product_count_in_cart, 'userFrom':userForm})
 
 
 #for showing login button for admin
@@ -337,7 +340,9 @@ def customer_home_view(request):
         product_count_in_cart=len(set(counter))
     else:
         product_count_in_cart=0
-    return render(request,'ecom/customer_home.html',{'products':products,'product_count_in_cart':product_count_in_cart})
+    
+    customer=models.Customer.objects.get(user_id=request.user.id)
+    return render(request,'ecom/customer_home.html',{'products':products,'product_count_in_cart':product_count_in_cart,'customer':customer})
 
 
 

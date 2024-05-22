@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 
   <style type="text/css">
     .bs-example {
@@ -18,19 +19,18 @@
       font-family: sans-serif;
 
     }
-
-        /*---------------------------------------
-           Social section
-        -----------------------------------------*/
         footer {
           padding: 0px 0px 0px 0px;
           background-color: black;
           margin: 0px;
+          position: fixed;
+          bottom:0;
+          right:0;
+          left:0;
         }
 
 
         #ftr {
-
           padding: 20px;
         }
 
@@ -41,7 +41,7 @@
           text-align: center;
           text-decoration: none;
           margin: 5px 2px;
-          border-radius: 50%;
+          border-radius: 10px;
         }
 
         .fa:hover {
@@ -72,30 +72,36 @@
 
         p {
           text-align: center;
+        }
 
+        .nav-item {
+          font-size: 15px;
+          color: #c7de2f;
+        }
+
+        .nav-item:hover {
+          color: #cbc868;
+        }
+
+        .wow {
+          margin-top: 0px;
+        }
+
+        .container {
+          padding: 0px;
         }
   </style>
-<link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
 <body>
-
-
-
   <div class="bs-example">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background:#337AB7;">
-      <a href="/" class="navbar-brand">ShopStar</a>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background:#1f2e3b;">
+      <a href="/" class="navbar-brand">Dashboard</a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        <div class="navbar-nav">
-          <a href="/view-customer" class="nav-item nav-link">Customer</a>
-          <a href="/admin-view-booking" class="nav-item nav-link">Booking</a>
-          <a href="/admin-products" class="nav-item nav-link">Products</a>
-          <a href="/view-feedback" class="nav-item nav-link">Feedback</a>
-        </div>
 
         <div class="navbar-nav navbar-right">
           <a href="/logout" class="nav-item nav-link">LOGOUT</a>
@@ -112,23 +118,15 @@
   <!-- content end-->
 <br><br><br><br><br><br><br><br>
   <footer>
-    <p>
-      <a id="ftr" href="https://github.com/uday-sudo" class="fa fa-facebook"></a>
-      <a id="ftr" href="https://github.com/uday-sudo" class="fa fa-whatsapp"></a>
-      <a id="ftr" href="https://github.com/uday-sudo" class="fa fa-instagram"></a>
-      <a id="ftr" href="https://github.com/uday-sudo" class="fa fa-twitter"></a>
-    </p>
 
     <br>
     <div class="container">
-      <div class="row">
         <div class="col-md-12 col-sm-12">
           <div style="color:#ffffff;" class="wow fadeInUp footer-copyright">
             <p>Made in India <br>
               Copyright &copy; 2024 uday101 </p>
           </div>
         </div>
-      </div>
     </div>
   </footer>
   

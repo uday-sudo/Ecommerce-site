@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
-<body>
+<body style="background-color: white;">
   {%if request.user.is_authenticated%}
     {% include "ecom/customer_navbar.html" %}
   {%else%}

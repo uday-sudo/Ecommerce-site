@@ -4,13 +4,10 @@
 
 
 <style media="screen">
-  body {
-    background-color:#8c9eff;
-  }
   .button {
   display: inline-block;
-  border-radius: 4px;
-  background-color: #f4511e;
+  border-radius: 20px;
+  background-color: #09c53b;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -47,22 +44,55 @@
   right: 0;
   }
 
+  .img-rounded {
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    box-shadow: 10px 5px 5px #474747;
+  }
+  .user-info {
+    display: flex;
+    justify-content: center;
+  }
+
+  .field {
+    display: flex;
+    align-items: center;
+  }
+
+  .field img {
+    margin-right: 5px;
+  }
+
+  .field p {
+    font-size: 30px;
+    padding-top: 16px;
+  }
+
+
 
 </style>
 <link rel="stylesheet" href="{% static 'style.css' %}">
 <br><br><br>
-<div style="padding-left:300px;" class="container">
+<div class="container">
 
-        <div class="col-sm-2 col-md-2">
-            <img src="{% static customer.profile_pic.url %}"   alt="profile pic" class="img-rounded img-responsive" />
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <blockquote>
-                <p>{{request.user}}</p> <small><cite title="Source Title">{{customer.address}}  <i class="glyphicon glyphicon-map-marker"></i></cite></small>
-            </blockquote>
-            <p> <i class="glyphicon glyphicon-phone"></i> {{customer.mobile}}
-            </p>
-        </div>
+    <div>
+        <img src="{% static customer.profile_pic.url %}"   alt="profile pic" class="img-rounded img-responsive" />
+    </div>
+    <div class="user-info">
+      <div>
+        <div class="field">
+          <img src="{% static "images/user.png" %}" height="30px">
+          <p> {{request.user}}</p></div>
+        <div class="field">
+          <img src="{% static "images/location.png" %}" height="30px">
+          <p> {{customer.address}}</p></div>
+        <div class="field">
+          <img src="{% static "images/call.png" %}" height="30px">
+          <p> {{customer.mobile}}</p></div>
+      </div>
+    </div>
 
 </div>
 <br>
